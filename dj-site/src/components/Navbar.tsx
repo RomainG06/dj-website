@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
                 {/* Logo */}
                 <button onClick={() => handleLinkClick('hero')} className="navbar-logo">
                     <span className="logo-icon">🎧</span>
-                    <span className="logo-text">DJ DIAZ</span>
+                    <span className="logo-text">DIAZMANTES</span>
                 </button>
 
                 {/* Desktop Links */}
