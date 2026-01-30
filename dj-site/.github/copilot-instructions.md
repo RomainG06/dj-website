@@ -6,6 +6,61 @@ This is a single-page DJ portfolio website built with React 19 + TypeScript + Vi
 
 Design goal: The site should feel modern, stylish, and visually appealing. Focus on clean layouts, smooth scrolling, responsive design, and engaging visual hierarchy. Think contemporary music/entertainment sites.
 
+## Design Direction
+
+Theme: Neon / Nightclub / Futuristic but clean
+Mood: Dark, elegant, immersive — not flashy or overloaded
+Goal: Instantly communicate the DJ’s universe, professionalism, and musical identity
+
+## Color Palette (Guidelines)
+
+**CSS Variables (defined in src/index.css):**
+
+```css
+/* Backgrounds */
+--bg-primary: #0a0a0a;          /* Deep black */
+--bg-secondary: #1a1a2e;        /* Dark charcoal */
+--bg-tertiary: #16213e;         /* Navy dark */
+
+/* Text Colors */
+--text-primary: #ffffff;        /* Pure white */
+--text-secondary: #b8b8b8;      /* Light gray */
+--text-muted: #808080;          /* Medium gray */
+
+/* Neon Accents */
+--neon-violet: #8a2be2;         /* BlueViolet - primary brand */
+--neon-pink: #ff1493;           /* DeepPink - secondary brand */
+--neon-blue: #00d4ff;           /* Electric blue */
+--neon-green: #39ff14;          /* Laser green (sparingly) */
+
+/* Gradients */
+--gradient-primary: linear-gradient(135deg, #8a2be2, #ff1493);
+--gradient-secondary: linear-gradient(135deg, #00d4ff, #8a2be2);
+--gradient-accent: linear-gradient(135deg, #ff1493, #8a2be2, #00d4ff);
+
+/* Glows & Shadows */
+--glow-violet: 0 0 20px rgba(138, 43, 226, 0.5);
+--glow-pink: 0 0 20px rgba(255, 20, 147, 0.5);
+--glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+--shadow-dark: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+/* Borders */
+--border-neon: 1px solid rgba(138, 43, 226, 0.3);
+--border-subtle: 1px solid rgba(255, 255, 255, 0.1);
+```
+
+**Usage Guidelines:**
+- Use dark backgrounds (`--bg-primary`, `--bg-secondary`) as base
+- Apply neon colors for accents: borders, text highlights, CTAs, hover states
+- Use gradients sparingly for headings and special elements
+- Add glows for depth and neon effect
+- `--neon-green` only for micro-interactions (audio indicators, separators)
+
+⚠️ **Moderation is key:**
+- Prefer glows, gradients, borders over flat neon backgrounds
+- Maintain high contrast and readability
+- Emphasize elegance over flashiness
+
 **Tech Stack:**
 - Build: Vite 7 with React Fast Refresh (HMR)
 - Framework: React 19.2 with TypeScript 5.9
@@ -83,6 +138,41 @@ npm run preview  # Preview production build
 5. Navbar: sticky/fixed, minimalist, modern design
 6. Footer: social links with consistent modern styling
 7. Footer: social links with consistent modern styling
+
+## SEO Guidelines (Very Important)
+- Copilot should always consider SEO when generating code:
+- Semantic HTML (header, main, section, footer)
+- Only one <h1> (DJ name)
+- Logical heading hierarchy (h2, h3)
+- Descriptive text content (not just visuals)
+Prepare for:
+- meta title
+- meta description
+- Open Graph tags
+- Images must include meaningful alt attributes
+
+This is a marketing site, not just a visual demo.
+
+## Component Implementation Guidelines
+When implementing components, Copilot should follow these rules:
+1. Keep components simple, readable, and focused
+2. Favor vertical rhythm and spacing over visual noise
+3. Smooth scrolling between sections
+4. Navbar:
+- Sticky or fixed
+- Minimal text
+- Neon hover underline or glow
+5. Hero:
+- Full viewport height
+- DJ name as main focus
+- Strong visual identity
+6. MusicPlayer:
+- HTML5 audio
+- Clean play/pause UI
+- Subtle neon accent (progress bar or button)
+7. Footer:
+- Social icons
+- Consistent neon accent usage
 
 ## ESLint Configuration
 

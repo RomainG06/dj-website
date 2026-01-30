@@ -1,28 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
+import MusicPlayer from './components/MusicPlayer';
+import Gallery from './components/Gallery';
+import Contact from './components/Contact';
 import './App.css';
 
 const App: React.FC = () => {
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    const saved = localStorage.getItem('theme');
-    return (saved as 'dark' | 'light') || 'dark';
-  });
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
-  };
-
   return (
     <>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <Hero />
-      {/* Les autres sections viendront ici */}
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <MusicPlayer />
+        <Gallery />
+        <Contact />
+      </main>
     </>
   );
 };

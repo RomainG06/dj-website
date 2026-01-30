@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-interface NavbarProps {
-    theme: 'dark' | 'light';
-    toggleTheme: () => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
+const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -46,16 +41,6 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                             {link.label}
                         </a>
                     ))}
-
-                    {/* Theme Toggle Button */}
-                    <button
-                        className="theme-toggle"
-                        onClick={toggleTheme}
-                        aria-label="Toggle theme"
-                        title={theme === 'dark' ? 'Mode clair' : 'Mode sombre'}
-                    >
-                        {theme === 'dark' ? '☀️' : '🌙'}
-                    </button>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -82,15 +67,6 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                         {link.label}
                     </a>
                 ))}
-
-                {/* Theme Toggle in Mobile Menu */}
-                <button
-                    className="theme-toggle-mobile"
-                    onClick={toggleTheme}
-                    aria-label="Toggle theme"
-                >
-                    {theme === 'dark' ? '☀️ Mode clair' : '🌙 Mode sombre'}
-                </button>
             </div>
         </nav>
     );
