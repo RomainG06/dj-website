@@ -140,6 +140,9 @@ button:focus-visible {
   align-items: center;
 }
 
+/* Footer */
+
+
 /* Logo */
 .navbar-logo {
   display: flex;
@@ -151,6 +154,10 @@ button:focus-visible {
   text-decoration: none;
   transition: transform 0.3s ease;
   letter-spacing: 0.05em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 .navbar-logo:hover {
@@ -196,6 +203,10 @@ button:focus-visible {
   font-size: 1rem;
   transition: color 0.3s ease;
   padding: 0.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .nav-link::after {
@@ -209,11 +220,13 @@ button:focus-visible {
   transition: width 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--accent-primary);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -280,9 +293,17 @@ button:focus-visible {
   border-radius: 8px;
   transition: all 0.3s ease;
   border-left: 3px solid transparent;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
 }
 
-.nav-link-mobile:hover {
+.nav-link-mobile:hover,
+.nav-link-mobile.active {
   color: var(--accent-primary);
   background: rgba(100, 108, 255, 0.1);
   border-left-color: var(--accent-primary);
