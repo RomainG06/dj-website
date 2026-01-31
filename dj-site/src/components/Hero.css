@@ -168,6 +168,31 @@
     transform: translateY(-1px);
 }
 
+.hero-tags {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
+
+.hero-tag {
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.hero-tag:hover {
+    color: var(--text-primary);
+}
+
+.hero-tag-separator {
+    font-size: 0.8rem;
+    color: var(--neon-green);
+}
+
 /* Dark Overlay - extends to cover entire hero section including video gallery */
 .hero-overlay {
     position: fixed;

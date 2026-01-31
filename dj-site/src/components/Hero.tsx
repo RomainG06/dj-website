@@ -50,6 +50,13 @@ const Hero: React.FC = () => {
                         <h1 className="hero-title">Diazmantes</h1>
                         <p className="hero-subtitle">Les meilleurs sets pour vos soirées</p>
                         <button className="hero-cta">Écouter maintenant</button>
+                        <div className="hero-tags">
+                            <span className="hero-tag">Club</span>
+                            <span className="hero-tag-separator">•</span>
+                            <span className="hero-tag">Festivals</span>
+                            <span className="hero-tag-separator">•</span>
+                            <span className="hero-tag">Concert</span>
+                        </div>
                     </div>
                 </div>
             </section>

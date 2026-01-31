@@ -117,7 +117,7 @@ button:focus-visible {
   left: 0;
   right: 0;
   padding: 1rem 0;
-  background: var(--bg-nav);
+  background: var(--bg-nav-scrolled);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   z-index: 1000;
