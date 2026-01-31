@@ -1,24 +1,25 @@
 import React from 'react';
 import './Contact.css';
+import insta from '../assets/insta-removebg-preview.png';
 
 const Contact: React.FC = () => {
     const contactInfo = [
         {
             icon: '📱',
             title: 'Téléphone',
-            value: '+33 6 12 34 56 78',
-            href: 'tel:+33612345678',
+            value: '+33 6 18 18 93 06',
+            href: 'tel:+33618189306',
             accent: 'violet'
         },
         {
             icon: '✉️',
             title: 'Email',
-            value: 'contact@diazmantes.com',
-            href: 'mailto:contact@diazmantes.com',
+            value: 'gregdiazmantes@gmail.com',
+            href: 'mailto:gregdiazmantes@gmail.com',
             accent: 'pink'
         },
         {
-            icon: '📸',
+            icon: <img src={insta} alt="Instagram" />,
             title: 'Instagram',
             value: '@diazmantes',
             href: 'https://instagram.com/diazmantes',
@@ -51,7 +52,7 @@ const Contact: React.FC = () => {
 
                     <div className="contact-message">
                         <p>
-                            Vous souhaitez réserver DJ Diaz pour votre événement ?
+                            Vous souhaitez réserver Diazmantes pour votre événement ?
                             <br />
                             N'hésitez pas à me contacter pour discuter de votre projet.
                         </p>

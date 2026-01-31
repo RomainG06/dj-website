@@ -1,17 +1,14 @@
 .hero-section {
-    min-height: 100vh;
+    min-height: 80vh;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: var(--bg-primary);
-    position: relative;
     overflow: hidden;
 }
 
-/* Background Image Grid */
+/* Background Image Grid - fixed to cover entire viewport */
 .hero-background-grid {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -21,6 +18,7 @@
     grid-auto-rows: 200px;
     gap: 15px;
     padding: 20px;
+    margin-top: 120px;
     z-index: 0;
 }
 
@@ -28,7 +26,7 @@
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    opacity: 0.15;
+    opacity: 0.8;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -84,21 +82,6 @@
         inset 0 0 20px rgba(0, 212, 255, 0.15);
 }
 
-/* Dark Overlay */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(22, 33, 62, 0.85) 100%),
-        radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(255, 20, 147, 0.08) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 1;
-}
-
 @keyframes pulse-bg {
 
     0%,
@@ -150,11 +133,12 @@
     letter-spacing: 4px;
     line-height: 1.1;
     text-shadow: 0 0 80px rgba(138, 43, 226, 0.5);
+    font-family: 'SignPainter', cursive;
 }
 
 .hero-subtitle {
     font-size: 1.8rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     margin: 0 0 50px 0;
     font-weight: 300;
     letter-spacing: 1px;
@@ -184,12 +168,34 @@
     transform: translateY(-1px);
 }
 
+/* Dark Overlay - extends to cover entire hero section including video gallery */
+.hero-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(135deg, rgba(22, 33, 62, 0.85) 0%, rgba(10, 10, 10, 0.85) 100%),
+        radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255, 20, 147, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
 @media (max-width: 968px) {
+
+    .hero-section {
+        min-height: 60vh;
+
+    }
+
     .hero-background-grid {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         grid-auto-rows: 150px;
         gap: 10px;
         padding: 15px;
+        margin-top: 80px;
     }
 
     .hero-title {
@@ -215,7 +221,7 @@
     }
 
     .hero-bg-image {
-        opacity: 0.1;
+        opacity: 0.8;
     }
 
     .hero-title {

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import VideoGallery from './VideoGallery';
 import diaz1 from '../assets/diaz1.jpg';
 import diaz2 from '../assets/diaz2.jpg';
 import diaz3 from '../assets/diaz3.jpg';
@@ -30,28 +31,30 @@ const Hero: React.FC = () => {
     ];
 
     return (
-        <section id="hero" className="hero-section">
-            {/* Background Grid */}
-            <div className="hero-background-grid" aria-hidden="true">
-                {backgroundImages.map((img, index) => (
-                    <div key={index} className={`hero-bg-image hero-bg-image-${img.accent}`}>
-                        <img src={img.src} alt="" loading="lazy" />
-                    </div>
-                ))}
-            </div>
-
+        <>
             {/* Dark Overlay */}
             <div className="hero-overlay"></div>
-
-            {/* Main Content */}
-            <div className="hero-container">
-                <div className="hero-content">
-                    <h1 className="hero-title">Diazmantes</h1>
-                    <p className="hero-subtitle">Les meilleurs sets pour vos soirées</p>
-                    <button className="hero-cta">Écouter maintenant</button>
+            <section id="hero" className="hero-section">
+                {/* Background Grid */}
+                <div className="hero-background-grid" aria-hidden="true">
+                    {backgroundImages.map((img, index) => (
+                        <div key={index} className={`hero-bg-image hero-bg-image-${img.accent}`}>
+                            <img src={img.src} alt="" loading="lazy" />
+                        </div>
+                    ))}
                 </div>
-            </div>
-        </section>
+
+                {/* Main Content */}
+                <div className="hero-container">
+                    <div className="hero-content">
+                        <h1 className="hero-title">Diazmantes</h1>
+                        <p className="hero-subtitle">Les meilleurs sets pour vos soirées</p>
+                        <button className="hero-cta">Écouter maintenant</button>
+                    </div>
+                </div>
+            </section>
+            <VideoGallery />
+        </>
     );
 };
 
