@@ -4,6 +4,11 @@ import './VideoGallery.css';
 const VideoGallery: React.FC = () => {
     const videos = [
         {
+            id: 'da9bQNZW2EQ',
+            title: 'Live Performance 1',
+            accent: 'violet'
+        },
+        {
             id: 'PvYQ24MAs9I',
             title: 'Mix 1',
             accent: 'violet'

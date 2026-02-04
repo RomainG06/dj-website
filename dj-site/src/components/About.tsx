@@ -52,7 +52,7 @@ const About: React.FC = () => {
 
                         <div className="about-stats">
                             <div className="stat-item">
-                                <span className="stat-number">10+</span>
+                                <span className="stat-number">20+</span>
                                 <span className="stat-label">Années d'Expérience</span>
                             </div>
                             <div className="stat-item">

@@ -48,6 +48,7 @@ const Hero: React.FC = () => {
                 <div className="hero-container">
                     <div className="hero-content">
                         <h1 className="hero-title">Diazmantes</h1>
+                        <p className='hero-job'>DJ / PRODUCTEUR / REMIXEUR</p>
                         <p className="hero-subtitle">Les meilleurs sets pour vos soirées</p>
                         <button className="hero-cta">Écouter maintenant</button>
                         <div className="hero-tags">
