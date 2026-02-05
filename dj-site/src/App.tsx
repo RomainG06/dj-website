@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import MusicPlayer from './components/MusicPlayer';
+import Platforms from './components/Platforms';
 import Contact from './components/Contact';
 import './App.css';
 import Footer from './components/Footer';
 
-type Section = 'hero' | 'about' | 'music' | 'contact';
+type Section = 'hero' | 'about' | 'platforms' | 'contact';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<Section>('hero');
@@ -18,8 +18,8 @@ const App: React.FC = () => {
         return <Hero />;
       case 'about':
         return <About />;
-      case 'music':
-        return <MusicPlayer />;
+      case 'platforms':
+        return <Platforms />;
       case 'contact':
         return <Contact />;
       default:

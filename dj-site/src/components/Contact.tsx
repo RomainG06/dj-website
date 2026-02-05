@@ -1,18 +1,20 @@
 import React from 'react';
 import './Contact.css';
 import insta from '../assets/insta-removebg-preview.png';
+import contactTel from '../assets/chattel.png';
+import mailContact from '../assets/mailcont.png';
 
 const Contact: React.FC = () => {
     const contactInfo = [
         {
-            icon: '📱',
+            icon: <img src={contactTel} alt="Téléphone" />,
             title: 'Téléphone',
             value: '+33 6 18 18 93 06',
             href: 'tel:+33618189306',
             accent: 'violet'
         },
         {
-            icon: '✉️',
+            icon: <img src={mailContact} alt="Email" />,
             title: 'Email',
             value: 'gregdiazmantes@gmail.com',
             href: 'mailto:gregdiazmantes@gmail.com',

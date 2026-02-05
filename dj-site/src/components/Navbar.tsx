@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import diaz12 from '../assets/gregmantes.png';
 
 
-type Section = 'hero' | 'about' | 'music' | 'contact';
+type Section = 'hero' | 'about' | 'platforms' | 'contact';
 
 interface NavbarProps {
     activeSection: Section;
@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
     const navLinks = [
         { id: 'hero' as Section, label: 'Accueil' },
         { id: 'about' as Section, label: 'À propos' },
-        { id: 'music' as Section, label: 'Musique' },
+        { id: 'platforms' as Section, label: 'Plateformes' },
         { id: 'contact' as Section, label: 'Contact' },
     ];
 
