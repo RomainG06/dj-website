@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import diaz12 from '../assets/gregmantes.png';
+
 
 type Section = 'hero' | 'about' | 'music' | 'contact';
 
@@ -38,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
             <div className="navbar-container">
                 {/* Logo */}
                 <button onClick={() => handleLinkClick('hero')} className="navbar-logo">
-                    <span className="logo-icon">🎧</span>
+                    <img src={diaz12} alt="Logo" className="logo-icon" />
                     <span className="logo-text">DIAZMANTES</span>
                 </button>
 

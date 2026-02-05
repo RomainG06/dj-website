@@ -165,8 +165,9 @@ button:focus-visible {
 }
 
 .logo-icon {
-  font-size: 2rem;
-  animation: pulse 2s ease-in-out infinite;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
 }
 
 .logo-text {
