@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    padding-top: 40px;
 }
 
 /* Background Image Grid - fixed to cover entire viewport */
@@ -252,7 +253,7 @@
 
     .hero-section {
         min-height: 60vh;
-
+        padding-top: 80px;
     }
 
     .hero-background-grid {
@@ -282,7 +283,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .hero-background-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         grid-auto-rows: 120px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Platforms.css';
-import diaz14 from '../assets/diaz14.jpg';
+import diaz12 from '../assets/diaz12.jpg';
 import diaz13 from '../assets/diaz13.jpg';
 import diaz10 from '../assets/diaz10.jpg';
 import soundcloudIcon from '../assets/soundcloudremove.png';
@@ -12,7 +12,7 @@ const Platforms: React.FC = () => {
         {
             name: 'Spotify',
             url: 'https://open.spotify.com/artist/4o8S39nuz3AATq2pTSZvWg?si=yGWdANWMQXeXXQFBB5EjAg',
-            photo: diaz14,
+            photo: diaz12,
             accent: 'violet',
             icon: (
                 <img src={spotifyIcon} alt="Spotify" className="platform-icon" />
@@ -41,7 +41,7 @@ const Platforms: React.FC = () => {
     return (
         <section id="platforms" className="platforms-section">
             <div className="platforms-container">
-                <h2 className="platforms-title">Mon son</h2>
+                <h2 className="platforms-title">Listen & Vibe</h2>
                 <p className="platforms-subtitle">Écoutez ma musique sur vos plateformes préférées</p>
 
                 <div className="platforms-grid">
