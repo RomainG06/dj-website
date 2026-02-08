@@ -41,7 +41,7 @@ const Platforms: React.FC = () => {
     return (
         <section id="platforms" className="platforms-section">
             <div className="platforms-container">
-                <h2 className="platforms-title">Retrouvez-moi sur</h2>
+                <h2 className="platforms-title">Mon son</h2>
                 <p className="platforms-subtitle">Écoutez ma musique sur vos plateformes préférées</p>
 
                 <div className="platforms-grid">
