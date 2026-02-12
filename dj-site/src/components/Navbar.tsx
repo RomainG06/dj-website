@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import diaz12 from '../assets/gregmantes.png';
+import audioTrack from '../assets/dj-mix.mp3';
 
 
 type Section = 'hero' | 'about' | 'platforms' | 'contact';
@@ -12,6 +13,8 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const audioRef = useRef<HTMLAudioElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,6 +24,43 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        const audio = audioRef.current;
+        if (audio) {
+            audio.play()
+                .then(() => {
+                    setIsPlaying(true);
+                })
+                .catch(() => {
+                    console.log('Autoplay bloqué, cliquez sur le logo pour démarrer la musique');
+                    setIsPlaying(false);
+                });
+
+            const handlePlay = () => setIsPlaying(true);
+            const handlePause = () => setIsPlaying(false);
+
+            audio.addEventListener('play', handlePlay);
+            audio.addEventListener('pause', handlePause);
+
+            return () => {
+                audio.removeEventListener('play', handlePlay);
+                audio.removeEventListener('pause', handlePause);
+            };
+        }
+    }, []);
+
+    const toggleAudio = () => {
+        const audio = audioRef.current;
+        if (audio) {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.play().catch(() => {
+                });
+            }
+        }
+    };
 
     const navLinks = [
         { id: 'hero' as Section, label: 'Accueil' },
@@ -38,11 +78,28 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
     return (
         <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
             <div className="navbar-container">
-                {/* Logo */}
-                <button onClick={() => handleLinkClick('hero')} className="navbar-logo">
-                    <img src={diaz12} alt="Logo" className="logo-icon" />
+                {/* Logo avec Audio Player */}
+                <button
+                    onClick={toggleAudio}
+                    className="navbar-logo"
+                    aria-label={isPlaying ? 'Arrêter la musique' : 'Démarrer la musique'}
+                    aria-pressed={isPlaying}
+                >
+                    <img
+                        src={diaz12}
+                        alt="Logo"
+                        className={`logo-icon ${isPlaying ? 'logo-spinning' : ''}`}
+                    />
                     <span className="logo-text">DIAZMANTES</span>
                 </button>
+
+                <audio
+                    ref={audioRef}
+                    loop
+                    preload="auto"
+                >
+                    <source src={audioTrack} type="audio/mpeg" />
+                </audio>
 
                 {/* Desktop Links */}
                 <div className="navbar-links">

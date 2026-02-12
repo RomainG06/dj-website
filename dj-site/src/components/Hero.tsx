@@ -30,6 +30,8 @@ const Hero: React.FC = () => {
         { src: diaz13, accent: 'blue' },
     ];
 
+    function openMixcloud() { window.open('https://open.spotify.com/artist/4o8S39nuz3AATq2pTSZvWg?si=yGWdANWMQXeXXQFBB5EjAg', '_blank'); }
+
     return (
         <>
             {/* Dark Overlay */}
@@ -50,7 +52,7 @@ const Hero: React.FC = () => {
                         <h1 className="hero-title">Diazmantes</h1>
                         <p className='hero-job'>DJ / PRODUCTEUR / REMIXEUR</p>
                         <p className="hero-subtitle">Les meilleurs sets pour vos soirées</p>
-                        <button className="hero-cta">Écouter maintenant</button>
+                        <button className="hero-cta" onClick={openMixcloud}>Écouter maintenant</button>
                         <div className="hero-tags">
                             <span className="hero-tag">Club</span>
                             <span className="hero-tag-separator">•</span>

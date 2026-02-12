@@ -186,7 +186,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 18px;
     font-size: 1.5rem;
     color: var(--text-primary);
 }
@@ -304,6 +304,10 @@
     .hero-job {
         font-size: 1rem;
         letter-spacing: 2px;
+    }
+
+    .hero-tags {
+        gap: 8px;
     }
 
     .hero-tag {
